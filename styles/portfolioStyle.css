@@ -1,0 +1,235 @@
+.blocks {
+  display: flex;
+  justify-content: center;
+  margin-block: clamp(20px, 4vw, 32px);
+}
+
+.block {
+  width: clamp(80%, 73vw, 90%);
+  background-color: #6d696d;
+  margin-right: clamp(20px, 5vw, 50px);
+  text-align: left;
+  color: #fff;
+  padding: clamp(20px, 3vw, 45px);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.block p {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: clamp(15px, 3vw, 24px);
+  position: relative;
+  line-height: 1.5;
+  z-index: 1;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.block__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) blur(2px);
+}
+
+.object {
+  width: clamp(80%, 73vw, 90%);
+  max-width: 1440px;
+  margin: clamp(30px, 5vw, 50px) auto;
+  text-align: center;
+}
+
+.object__title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: clamp(10px, 2vw, 20px);
+  color: #363636;
+  font-family: "Open sans", sans-serif;
+}
+
+.object__text {
+  font-size: clamp(14px, 2vw, 18px);
+  font-family: "Arial", "Helvetica", sans-serif;
+  color: #000;
+  margin-bottom: clamp(20px, 4vw, 30px);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: clamp(200px, 30vw, 250px);
+  margin: clamp(10px, 3vw, 20px);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.card img {
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+  margin-bottom: clamp(10px, 3vw, 20px);
+  padding: 10px;
+  background-color: #525e19;
+  border-radius: 5px;
+}
+
+.card__title {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-family: "Open sans", sans-serif;
+  color: #000;
+  margin-bottom: clamp(5px, 1vw, 10px);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: clamp(10px, 3vw, 20px);
+  border: 3px solid #525e19;
+  border-radius: 7px;
+  padding: clamp(15px, 3vw, 25px);
+  padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  width: clamp(300px, 80vw, 660px);
+  height: clamp(250px, 70vw, 530px);
+}
+
+.photo {
+  width: 100%;
+  height: 80%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 7px;
+  object-fit: scale-down;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+}
+
+.caption {
+  margin-block: clamp(15px, 3vw, 25px) 0px;
+  font-size: clamp(18px, 3vw, 24px);
+  text-align: center;
+  font-family: "Open sans", sans-serif;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: 2% auto;
+  display: block;
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.gallery-item {
+  width: calc(33% - 20px);
+  margin: 10px;
+  padding: 10px;
+  overflow: hidden;
+  border: 3px solid #525e19;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.object__title-min {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-top: clamp(10px, 3vw, 20px);
+  margin-left: clamp(10px, 3vw, 17px);
+  color: #363636;
+  font-family: "Open sans", sans-serif;
+  text-align: left;
+}
+
+@media (max-width: 1280px) {
+  .gallery-item {
+    width: calc(50% - 20px);
+  }
+
+  .photos {
+    flex-wrap: wrap;
+  }
+
+  .photo-wrapper {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 100%;
+  }
+
+  .close {
+    color: #808080;
+  }
+
+  .block {
+    margin-right: 0;
+  }
+}

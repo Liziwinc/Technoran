@@ -1,1 +1,1 @@
-# Technoran
+https://liziwinc.github.io/Technoran/

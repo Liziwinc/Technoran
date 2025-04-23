@@ -1,0 +1,135 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px; /* Добавлено для отступов на мобильных */
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: "Open sans", sans-serif;
+  text-align: center; /* Добавлено для центрирования на мобильных */
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  border: 3px solid #525e19;
+  border-radius: 7px;
+  padding: 25px 15px;
+  overflow: hidden;
+  width: 90%; /* Добавлено для адаптивности ширины */
+  max-width: 350px; /* Добавлено для ограничения ширины на больших экранах */
+}
+
+.photo {
+  width: 100%; /* Изменено для адаптивности ширины */
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+}
+
+.caption {
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: "Arial", "Helvetica", sans-serif;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: 2% auto;
+  display: block;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .photo-wrapper {
+    margin: 15px;
+    padding: 20px 10px;
+  }
+
+  .caption {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .photo-wrapper {
+    margin: 10px;
+    padding: 15px 5px;
+  }
+
+  .caption {
+    font-size: 12px;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #220404;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
+}
