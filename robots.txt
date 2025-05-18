@@ -1,3 +1,24 @@
+User-agent: Yandex
+Clean-param: utm_source&utm_medium&utm_campaign
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /pages/dopuski.html
+Allow: /scripts/*.js
+Allow: /styles/*.css
+Allow: /img/
+
+User-agent: Googlebot
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /pages/dopuski.html
+Allow: /scripts/*.js
+Allow: /styles/*.css
+Allow: /img/
+
 User-agent: *
-Allow: /
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /pages/dopuski.html
+Allow: /             
+
 Sitemap: https://tehnoran.ru/sitemap.xml
